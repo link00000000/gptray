@@ -28,7 +28,7 @@ jobs:
         cache: 'npm'
     - run: npm install
     - run: npm run lint
-    - run: npx electron-builder make --platform win32 --target squirrel
+    - run: npx electron-forge make --platform win32 --target squirrel
     - name: Get current time
       uses: josStorer/get-current-time@v2
       id: current-time

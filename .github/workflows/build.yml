@@ -49,6 +49,7 @@ jobs:
         prerelease: false
         # release_name: "${{ steps.current-time.outputs.time }} - SHA: ${{ GITHUB.SHA }}"
         release_name: ${{ steps.create-tag.outputs.new_version }}
+        tag_name: ${{ steps.create-release.outputs.new_tag }}
     - name: Upload artifacts
       uses: actions/upload-release-asset@v1
       env:

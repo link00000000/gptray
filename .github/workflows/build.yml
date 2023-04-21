@@ -31,9 +31,6 @@ jobs:
     - name: Set path for candle and light
       run: echo "C:\Program Files (x86)\WiX Toolset v3.11\bin" >> $GITHUB_PATH
     - run: npx electron-forge make --platform win32 --target squirrel
-    - name: Get current time
-      uses: josStorer/get-current-time@v2
-      id: current-time
     - name: Create tag
       uses: mathieudutour/github-tag-action@v6.1
       id: create-tag
@@ -47,9 +44,8 @@ jobs:
       with:
         draft: false
         prerelease: false
-        # release_name: "${{ steps.current-time.outputs.time }} - SHA: ${{ GITHUB.SHA }}"
-        release_name: ${{ steps.create-tag.outputs.new_version }}
-        tag_name: ${{ steps.create-release.outputs.new_tag }}
+        release_name: ${{ steps.create-tag.outputs.new_tag }}
+        tag_name: ${{ steps.create-tag.outputs.new_tag }}
     - name: Upload artifacts
       uses: actions/upload-release-asset@v1
       env:

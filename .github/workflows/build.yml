@@ -28,6 +28,8 @@ jobs:
         cache: 'npm'
     - run: npm install
     - run: npm run lint
+    - name: Set path for candle and light
+      run: echo "C:\Program Files (x86)\WiX Toolset v3.11\bin" >> $GITHUB_PATH
     - run: npx electron-forge make --platform win32 --target squirrel
     - name: Get current time
       uses: josStorer/get-current-time@v2

@@ -35,9 +35,9 @@ jobs:
       uses: josStorer/get-current-time@v2
       id: current-time
     - name: Release
-      uses: softprops/action-gh-release@v1
+      uses: ncipollo/release-action@v1.12.0
       with:
         name: "${{ steps.current-time.outputs.time }} - SHA: ${{ GITHUB.SHA }}"
-        files: |
-          out/make/squirrel.windows/x64/GPTray-1.0.0 Setup.exe
+        commit: ${{ GITHUB.SHA }}
+        artifacts: out/make/squirrel.windows/x64/GPTray-1.0.0 Setup.exe
           

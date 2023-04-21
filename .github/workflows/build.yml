@@ -37,6 +37,7 @@ jobs:
     - name: Release
       uses: softprops/action-gh-release@v1
       with:
+        name: "${{ steps.current-time.outputs.time }} - SHA: ${{ GITHUB_SHA }}"
         files: |
           out/make/squirrel.windows/x64/GPTray-1.0.0 Setup.exe
           

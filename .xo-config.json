@@ -3,6 +3,7 @@
         "node",
         "browser"
     ],
+    "space": 4, 
     "rules": {
         "unicorn/prefer-module": "off",
         "quotes": [
